@@ -19,27 +19,34 @@ int main() {
 
     fin.close(); //close file
     
-    StringBinaryTree tree2; //binary tree2
-    //strings to search tree
-    string addNode, deleteNode, searchNode, modifyNode;
+    //strings for tree menu
+    string addNode, deleteNode, searchForNode, modifyNode;
+    
+    StringBinaryTree tree2;
+    tree2.insertNode("3");
+    tree2.insertNode("Fun");
+    tree2.insertNode("5");
     
     //menu
     cout << "String Binary Tree Menu" << endl;
     //insert node
-    cout << "Add" << endl;
+    cout << "Add Node: ";
     cin >> addNode;
-    tree.insertNode("Hello");
+    tree2.insertNode(addNode);
     //delete node
-    cout << "Delete" << endl;
-    tree.remove("wumzrtoe");
+    cout << "Delete Node: ";
+    cin >> deleteNode;
+    tree2.remove(deleteNode);
     //search for node
-    cout << "Search" << endl;
-    tree.searchNode("wuNDD54s");
+    cout << "Search for Node: ";
+    cin >> searchForNode;
+    tree2.searchNode(searchForNode);
     //modify node
-    cout << "Modify" << endl;
-    tree.
+    cout << "Modify Node: ";
+    cin >> modifyNode;
+    //tree.
     
-    tree.displayInOrder();
+    tree2.displayInOrder();
   
     return 0;
 }
