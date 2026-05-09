@@ -16,14 +16,30 @@ int main() {
         tree.insertNode(codes);
         count++;
     }
-    
-    tree.displayInOrder(); //display tree contents
 
     fin.close(); //close file
     
     StringBinaryTree tree2; //binary tree2
-    tree2.insertNode("Hello"); //insert node
-    tree2.displayInOrder(); //display tree2 contents
-
+    //strings to search tree
+    string addNode, deleteNode, searchNode, modifyNode;
+    
+    //menu
+    cout << "String Binary Tree Menu" << endl;
+    //insert node
+    cout << "Add" << endl;
+    cin >> addNode;
+    tree.insertNode("Hello");
+    //delete node
+    cout << "Delete" << endl;
+    tree.remove("wumzrtoe");
+    //search for node
+    cout << "Search" << endl;
+    tree.searchNode("wuNDD54s");
+    //modify node
+    cout << "Modify" << endl;
+    tree.
+    
+    tree.displayInOrder();
+  
     return 0;
 }
