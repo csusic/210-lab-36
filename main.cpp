@@ -1,11 +1,11 @@
 // COMSC-210 | Lab 36 | Christine Susic
 
 #include <iostream>
-#include "IntBinaryTree.h"
+#include "StringBinaryTree.h"
 using namespace std;
 
 int main() {
-    IntBinaryTree tree;
+    StringBinaryTree tree;
     
     tree.insertNode("Hello");
     tree.displayInOrder();
