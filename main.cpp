@@ -5,7 +5,10 @@
 using namespace std;
 
 int main() {
+    IntBinaryTree tree;
     
+    tree.insertNode("Hello");
+    tree.displayInOrder();
 
     return 0;
 }
