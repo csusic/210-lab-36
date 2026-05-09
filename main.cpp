@@ -19,34 +19,46 @@ int main() {
 
     fin.close(); //close file
     
+    //int for menu
+    int choice;
     //strings for tree menu
     string addNode, deleteNode, searchForNode, modifyNode;
+    do {
+        //menu
+        cout << "String Binary Tree Menu: " << endl;
+        cout << "[1] Add Node " << endl;
+        cout << "[2] Delete Node " << endl;
+        cout << "[3] Search for Node " << endl;
+        cout << "[4] Modify Node " << endl;
+        cout << "Enter your choice: " << endl;
+        cin >> choice;
     
-    StringBinaryTree tree2;
-    tree2.insertNode("3");
-    tree2.insertNode("Fun");
-    tree2.insertNode("5");
+        switch (choice) {
+            //1. Insert node
+            case 1:
+                cin >> addNode;
+                tree.insertNode(addNode);
+                break;
+            //2. Delete node
+            case 2:
+                 cin >> deleteNode;
+                tree.remove(deleteNode);
+                break;
+            //3. Search for node
+            case 3:
+                cin >> searchForNode;
+                tree.searchNode(searchForNode);
+                break;
+            //4. Modify node
+            case 4:
+                cin >> modifyNode;
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    } while (choice != 0);
     
-    //menu
-    cout << "String Binary Tree Menu" << endl;
-    //insert node
-    cout << "Add Node: ";
-    cin >> addNode;
-    tree2.insertNode(addNode);
-    //delete node
-    cout << "Delete Node: ";
-    cin >> deleteNode;
-    tree2.remove(deleteNode);
-    //search for node
-    cout << "Search for Node: ";
-    cin >> searchForNode;
-    tree2.searchNode(searchForNode);
-    //modify node
-    cout << "Modify Node: ";
-    cin >> modifyNode;
-    //tree.
-    
-    tree2.displayInOrder();
+    tree.displayInOrder();
   
     return 0;
 }
