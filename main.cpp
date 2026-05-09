@@ -19,46 +19,55 @@ int main() {
 
     fin.close(); //close file
     
-    //int for menu
+    //choice for menu
     int choice;
-    //strings for tree menu
+    //string input for tree menu
     string addNode, deleteNode, searchForNode, modifyNode;
     do {
         //menu
-        cout << "String Binary Tree Menu: " << endl;
+        cout << "\nString Binary Tree Menu: " << endl;
         cout << "[1] Add Node " << endl;
         cout << "[2] Delete Node " << endl;
         cout << "[3] Search for Node " << endl;
-        cout << "[4] Modify Node " << endl;
-        cout << "Enter your choice: " << endl;
+        cout << "[4] Modify Node Order (post order) " << endl;
+        cout << "[5] Display Nodes (in order) " << endl;
+        cout << "[0] Exit" << endl;
+        cout << "Enter your choice: ";
         cin >> choice;
     
         switch (choice) {
             //1. Insert node
             case 1:
+                cout << "Add Node: ";
                 cin >> addNode;
                 tree.insertNode(addNode);
                 break;
             //2. Delete node
             case 2:
-                 cin >> deleteNode;
+                cout << "Delete Node: ";
+                cin >> deleteNode;
                 tree.remove(deleteNode);
                 break;
             //3. Search for node
             case 3:
+                cout << "Search for node: ";
                 cin >> searchForNode;
-                tree.searchNode(searchForNode);
+                cout << tree.searchNode(searchForNode);
                 break;
-            //4. Modify node
+            //4. Modify nodes
             case 4:
-                cin >> modifyNode;
+                cout << "Modify Node Order (post order): ";
+                tree.displayPostOrder();
+                break;
+            //5. Display nodes
+            case 5:
+                cout << "Display Nodes (in order): ";
+                tree.displayInOrder();
                 break;
             default:
                 cout << "Invalid choice. Please try again." << endl;
         }
     } while (choice != 0);
-    
-    tree.displayInOrder();
   
     return 0;
 }
