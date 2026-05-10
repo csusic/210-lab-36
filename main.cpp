@@ -6,17 +6,18 @@
 using namespace std;
 
 int main() {
-    ifstream fin("codes.txt"); //open fil
+    ifstream fin("codes.txt"); //open file
     int count = 0; //counter
     string codes; //string to read from file
     StringBinaryTree tree; //binary tree
     
-    //read codes from file into tree
-    while (getline(fin, codes)) {
+    //read 10 codes from file into tree
+    while (count < 10) {
+        getline(fin, codes);
         tree.insertNode(codes);
         count++;
     }
-
+    
     fin.close(); //close file
     
     //choice for menu
@@ -52,20 +53,25 @@ int main() {
             case 3:
                 cout << "Search for node: ";
                 cin >> searchForNode;
-                cout << tree.searchNode(searchForNode);
+                cout << "(O for not found, 1 for found): ";
+                cout << tree.searchNode(searchForNode) << endl;
                 break;
             //4. Modify nodes
             case 4:
-                cout << "Modify Node Order (post order): ";
+                cout << "\nModify Node Order (post order): " << endl;
                 tree.displayPostOrder();
                 break;
             //5. Display nodes
             case 5:
-                cout << "Display Nodes (in order): ";
+                cout << "\nDisplay Nodes (in order): " << endl;
                 tree.displayInOrder();
                 break;
+            //0. Exit
+            case 0:
+                cout << "Exiting..." << endl;
+                break;
             default:
-                cout << "Invalid choice. Please try again." << endl;
+                cout << "\nInvalid choice. Please try again." << endl;
         }
     } while (choice != 0);
   
