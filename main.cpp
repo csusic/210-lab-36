@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    ifstream fin("codes.txt"); //open file
+    ifstream fin("codes.txt"); //open fil
     int count = 0; //counter
     string codes; //string to read from file
     StringBinaryTree tree; //binary tree
