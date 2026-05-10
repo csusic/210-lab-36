@@ -30,8 +30,8 @@ int main() {
         cout << "[1] Add Node " << endl;
         cout << "[2] Delete Node " << endl;
         cout << "[3] Search for Node " << endl;
-        cout << "[4] Modify Node Order (post order) " << endl;
-        cout << "[5] Display Nodes (in order) " << endl;
+        cout << "[4] Display Nodes (in order) " << endl;
+        cout << "[5] Modify Node Order (post order) " << endl;
         cout << "[0] Exit" << endl;
         cout << "Enter your choice: ";
         cin >> choice;
@@ -56,15 +56,15 @@ int main() {
                 cout << "(O for not found, 1 for found): ";
                 cout << tree.searchNode(searchForNode) << endl;
                 break;
-            //4. Modify nodes
+            //4. Display nodes
             case 4:
-                cout << "\nModify Node Order (post order): " << endl;
-                tree.displayPostOrder();
-                break;
-            //5. Display nodes
-            case 5:
                 cout << "\nDisplay Nodes (in order): " << endl;
                 tree.displayInOrder();
+                break;
+            //5. Modify nodes
+            case 5:
+                cout << "\nModify Node Order (post order): " << endl;
+                tree.displayPostOrder();
                 break;
             //0. Exit
             case 0:
